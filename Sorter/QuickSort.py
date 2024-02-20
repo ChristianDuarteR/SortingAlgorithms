@@ -6,12 +6,12 @@ def quick_sort(array, smaller, higher):
     :param higher: Index of the last element of array
     :return:
     """
-    if smaller < higher:
+    if smaller < higher:  # O(1)
         # Dividing and select the pivot
-        pivot = partition(array, smaller, higher)
+        pivot = partition(array, smaller, higher)   # O(1)
 
-        quick_sort(array, smaller, pivot - 1)
-        quick_sort(array, pivot + 1, higher)
+        quick_sort(array, smaller, pivot - 1)   # O(n/2)
+        quick_sort(array, pivot + 1, higher)    # O(n/2)
 
 
 def partition(array, smaller, higher):

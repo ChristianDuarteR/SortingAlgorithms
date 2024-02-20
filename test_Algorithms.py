@@ -1,8 +1,6 @@
 import unittest
 
-import InsertionSort
-import MergeSort
-import QuickSort
+from Sorter import QuickSort, InsertionSort, MergeSort
 
 
 class TestSorting(unittest.TestCase):
@@ -37,12 +35,12 @@ class TestSorting(unittest.TestCase):
         self.assertEquals(MergeSort.merge_sort(test_arr_one), [1, 3, 6, 7, 9])
         self.assertEquals(MergeSort.merge_sort(test_arr_two), [3, 9])
         self.assertEquals(MergeSort.merge_sort(test_arr_three), [1, 3, 5, 6, 7, 8, 9, 10, 12, 15])
-        self.assertEquals(MergeSort.merge_sort(test_arr_fourth), [1, 3, 4, 6, 7, 11, 13, 15, 17, 18, 20, 22, 24, 25, 27, 29, 30,
-                                            32, 35, 36, 38, 40, 41, 42, 44, 46, 47, 48, 49, 50])
+        self.assertEquals(MergeSort.merge_sort(test_arr_fourth),
+                          [1, 3, 4, 6, 7, 11, 13, 15, 17, 18, 20, 22, 24, 25, 27, 29, 30,
+                           32, 35, 36, 38, 40, 41, 42, 44, 46, 47, 48, 49, 50])
         self.assertEquals(MergeSort.merge_sort(test_arr_five), [2, 3, 3, 7, 8, 15])
 
     def test_insertionSort(self):
-
         test_arr_one = [6, 3, 1, 7, 9]
         test_arr_two = [9, 3]
         test_arr_three = [9, 3, 12, 5, 8, 15, 1, 6, 10, 7]
@@ -61,6 +59,7 @@ class TestSorting(unittest.TestCase):
         self.assertEquals(test_arr_fourth, [1, 3, 4, 6, 7, 11, 13, 15, 17, 18, 20, 22, 24, 25, 27, 29, 30,
                                             32, 35, 36, 38, 40, 41, 42, 44, 46, 47, 48, 49, 50])
         self.assertEquals(test_arr_five, [2, 3, 3, 7, 8, 15])
+
 
 if __name__ == 'main':
     unittest.main()
